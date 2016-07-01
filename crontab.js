@@ -43,11 +43,9 @@ exports.remove = function(_id){
 }
 exports.crontabs = function(callback){
 	console.log('oi');
-	db.find({ system: 'solar' }, function (err, docs) {
+	db.find({ name: 'Magento MacBike - Admin Play' }, function (err, docs) {
 		console.log(err);
 		console.log(docs);
-	  // docs is an array containing documents Mars, Earth, Jupiter
-	  // If no document is found, docs is equal to []
 	});
 	console.log('vifm');
 	/*db.find({}).exec(function(err, docs){
