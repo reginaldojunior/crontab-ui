@@ -43,6 +43,7 @@ exports.remove = function(_id){
 }
 exports.crontabs = function(callback){
 	db.find({}).sort({ created: -1 }).limit(1).exec(function(err, docs){
+		console.log(docs);
 		for(var i=0; i<docs.length; i++){
 			if(docs[i].schedule == "@reboot")
 				docs[i].next = "Next Reboot"
