@@ -32,16 +32,16 @@ app.set('views', __dirname + '/views');
 app.set('port', (process.env.PORT || 8000));
 
 app.get(routes.root, function(req, res) {
-	res.render('index');
+	//res.render('index');
 	// get all the crontabs
-	/*crontab.crontabs( function(docs){
+	crontab.crontabs( function(docs){
 		res.render('index', {
 			routes : JSON.stringify(routes),
 			crontabs : JSON.stringify(docs),
 			backups : crontab.get_backup_names(),
 			env : crontab.get_env()
 		});
-	});*/
+	});
 })
 
 app.post(routes.save, function(req, res) {
