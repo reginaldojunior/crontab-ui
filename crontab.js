@@ -43,7 +43,7 @@ exports.remove = function(_id){
 }
 exports.crontabs = function(callback){
 	console.log('oi');
-	db.find({ name: 'Magento MacBike - Admin Play' }, function (err, docs) {
+	db.find({ name: 'Magento MacBike - Admin Play' }.exec(function (err, docs) {
 		console.log(err);
 		console.log(docs);
 	});
