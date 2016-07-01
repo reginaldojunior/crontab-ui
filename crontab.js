@@ -42,8 +42,12 @@ exports.remove = function(_id){
 	db.remove({_id: _id}, {});
 }
 exports.crontabs = function(callback){
-	db.find({}).exec(function(err, docs){ console.log(err); });
-	db.find({}).exec(function(err, docs){
+	db.find({ system: 'solar' }, function (err, docs) {
+	  // docs is an array containing documents Mars, Earth, Jupiter
+	  // If no document is found, docs is equal to []
+	});
+
+	/*db.find({}).exec(function(err, docs){
 		console.log(err);
 		for(var i=0; i<docs.length; i++){
 			if(docs[i].schedule == "@reboot")
@@ -52,7 +56,7 @@ exports.crontabs = function(callback){
 				docs[i].next = cron_parser.parseExpression(docs[i].schedule).next().toString();
 		}
 		callback(docs);
-	});
+	});*/
 }
 exports.set_crontab = function(env_vars){
 	exports.crontabs( function(tabs){
