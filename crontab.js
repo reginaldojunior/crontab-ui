@@ -42,7 +42,7 @@ exports.remove = function(_id){
 	db.remove({_id: _id}, {});
 }
 exports.crontabs = function(callback){
-	console.log(db.find({}));
+	db.find({}).exec(function(err, docs));
 	db.find({}).exec(function(err, docs){
 		console.log(docs);
 		for(var i=0; i<docs.length; i++){
