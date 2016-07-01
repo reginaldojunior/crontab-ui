@@ -37,8 +37,8 @@ app.get(routes.root, function(req, res) {
 		res.render('index', {
 			routes : JSON.stringify(routes),
 			crontabs : JSON.stringify(docs),
-			backups : crontab.get_backup_names(),
-			env : crontab.get_env()
+			//backups : crontab.get_backup_names(),
+			//env : crontab.get_env()
 		});
 	});
 })
