@@ -35,8 +35,8 @@ app.get(routes.root, function(req, res) {
 	// get all the crontabs
 	crontab.crontabs( function(docs){
 		res.render('index', {
-			routes : JSON.stringify(routes),
-			crontabs : JSON.stringify(docs),
+			//routes : JSON.stringify(routes),
+			//crontabs : JSON.stringify(docs),
 			//backups : crontab.get_backup_names(),
 			//env : crontab.get_env()
 		});
