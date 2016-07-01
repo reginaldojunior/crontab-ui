@@ -42,13 +42,13 @@ exports.remove = function(_id){
 	db.remove({_id: _id}, {});
 }
 exports.crontabs = function(callback){
-	console.log('oi');
+	/*console.log('oi');
 	db.find({ name: 'Magento MacBike - Admin Play' }).skip(1).limit(2).exec(function (err, docs) {
 		console.log(err);
 		console.log(docs);
 	});
-	console.log('vifm');
-	/*db.find({}).exec(function(err, docs){
+	console.log('vifm');*/
+	db.find({}).exec(function(err, docs){
 		console.log(err);
 		for(var i=0; i<docs.length; i++){
 			if(docs[i].schedule == "@reboot")
@@ -57,7 +57,7 @@ exports.crontabs = function(callback){
 				docs[i].next = cron_parser.parseExpression(docs[i].schedule).next().toString();
 		}
 		callback(docs);
-	});*/
+	});
 }
 exports.set_crontab = function(env_vars){
 	exports.crontabs( function(tabs){
