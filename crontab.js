@@ -43,6 +43,8 @@ exports.remove = function(_id){
 }
 exports.crontabs = function(callback){
 	db.find({ system: 'solar' }, function (err, docs) {
+		console.log(err);
+		console.log(docs);
 	  // docs is an array containing documents Mars, Earth, Jupiter
 	  // If no document is found, docs is equal to []
 	});
